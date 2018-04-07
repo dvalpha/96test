@@ -33,9 +33,6 @@
 							
 							<td>
 							 <a onclick="editar('<c:out value="${bean.codclient}"></c:out>')" href="#"><button class="btn btn-primary btn-xs">Gestionar albaranes del cliente</button></a>
-							
-							
-							    
 							    <form action="list-albaranes-cliente" id="frm-<c:out value="${bean.codclient}"></c:out>" method="post">
 							    <input type="hidden" name="id" value="<c:out value="${bean.codclient}"></c:out>">
 							    </form>
