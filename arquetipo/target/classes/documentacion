@@ -1,0 +1,36 @@
+
+#  package com.dvalpha.core.controller
+-- Este paquete almacena metodos utilidad para los controladores y la clase encargada de la navegacion
+
+#  package com.dvalpha.core.session
+-- Este paquete almacena las clases destinadas a reportar datos sobre el comportamiento de la aplicacion y de los usuarios y su configuración
+
+#  package com.dvalpha.core.users
+-- Este paquete gestiona las altas de usuarios,roles y permisos 
+
+#  package com.dvalpha.core.config
+-- Este paquete almacena las clases destinadas a la configuracion general del proyecto
+
+#  package com.dvalpha.core.utils
+-- Este paquete almacena clases de utilidad para el desarrollo del proyecto
+
+#  package com.dvalpha.core.forms
+-- Este paquete almacena clases de utilidad para la creacion de formularios en HTML
+
+#  package com.dvalpha.core.mail
+-- Este paquete almacena clases de utilidad para el envio de e-mails desde la aplicacion
+
+#  package com.dvalpha.core.fileupload
+-- Este paquete almacena clases de utilidad para la subida y gestion de los archivos subidos al servidor
+
+#  package com.dvalpha.core.report
+-- Este paquete almacena clases usadas para reportar el comportamiento del arquetipo (la base)
+
+#  package com.dvalpha.core.login
+-- Este paquete almacena clases usadas para la validacion de usuarios y la carga de datos del usuario una vez accede a la aplicacion
+
+#  package com.dvalpha.core.dao
+-- Este paquete almacena clases usadas para el acceso a datos de forma generica
+
+#  package com.dvalpha.core.entity
+-- Este paquete almacena los beans que representan las tablas en base de datos

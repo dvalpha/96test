@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>  
+
+<!-- DEFINICIONES DE LOS LAYOUTS--> 
+  <!-- Login Definition -->
+   <definition name="login-definition"
+       template="/WEB-INF/views/tiles/layouts/loginLayout.jsp">  
+       <put-attribute name="title" value="" />  
+       <put-attribute name="header" value="/WEB-INF/views/tiles/template/defaultHeader.jsp" />  
+       <put-attribute name="body" value="" />  
+   </definition>  
+   
+   <!-- Login Page -->
+   <definition name="login" extends="login-definition">  
+       <put-attribute name="title" value="Welcome" />  
+       <put-attribute name="body" value="/WEB-INF/views/login/login.jsp" />  
+   </definition>  
+   
+  
+ <!-- default Definition -->
+   <definition name="base-definition"
+       template="/WEB-INF/views/tiles/layouts/defaultLayout.jsp">  
+       <put-attribute name="title" value="" />  
+       <put-attribute name="header" value="/WEB-INF/views/tiles/template/defaultHeader.jsp" />  
+       <put-attribute name="menu" value="/WEB-INF/views/tiles/template/defaultMenu.jsp" /> 
+       <put-attribute name="body" value="" />  
+       <put-attribute name="footer" value="/WEB-INF/views/tiles/template/defaultFooter.jsp" />  
+   </definition>  
+   
+ 
+   
+   <!-- RESPONSES -->
+   
+   <!-- Home Main -->
+   <definition name="home" extends="base-definition">  
+       <put-attribute name="title" value="Main menu" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/home.jsp" />  
+   </definition>  
+   
+   <!-- Home Users -->
+   <definition name="user-main" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/users/user-main.jsp" />  
+   </definition>  
+   
+   <!-- Home Roles -->
+   <definition name="roles-main" extends="base-definition">  
+       <put-attribute name="title" value="Roles" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/roles/roles-main.jsp" />  
+   </definition>  
+ 
+   
+   <!-- CRUD USERS -->
+    <definition name="user-add" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/users/user-add.jsp" />  
+   </definition>  
+    <definition name="user-list" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/users/user-list.jsp" />  
+   </definition>  
+   <definition name="user-edit" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/users/user-edit.jsp" />  
+   </definition> 
+   
+   <!-- CRUD ROLES -->
+   <definition name="roles-list" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/roles/roles-list.jsp" />  
+   </definition>
+    <definition name="roles-add" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/roles/roles-add.jsp" />  
+   </definition>
+    <definition name="roles-edit" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/roles/roles-edit.jsp" />  
+   </definition>
+   <definition name="roles-add-module" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/roles/roles-add-module.jsp" />  
+   </definition>
+    <definition name="roles-update-module" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/roles/roles-update-module.jsp" />  
+   </definition>
+   
+    <!-- CRUD URLS -->
+   <definition name="url-list" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/roles/url-list.jsp" />  
+   </definition>
+    <definition name="url-add" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/roles/url-add.jsp" />  
+   </definition>
+    <definition name="url-edit" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/roles/url-edit.jsp" />  
+   </definition>
+     
+    <!-- CRUD DOCUMENTACION LIBROS -->
+    <definition name="libro-list" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/documentacion/libro-list.jsp" />  
+   </definition>
+    <definition name="libro-add" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/documentacion/libro-add.jsp" />  
+   </definition>
+  <definition name="libro-edit" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/documentacion/libro-edit.jsp" />  
+   </definition>
+   
+   <!-- CRUD DOCUMENTACION CATEGORIAS -->
+   <definition name="categoria-list" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/documentacion/categoria-list.jsp" />  
+   </definition>
+    <definition name="categoria-add" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/documentacion/categoria-add.jsp" />  
+   </definition>
+  <definition name="categoria-edit" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/documentacion/categoria-edit.jsp" />  
+   </definition>
+   
+   <!-- CRUD DOCUMENTACION DOCUMENTOS -->
+   <definition name="documento-list" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/documentacion/documento-list.jsp" />  
+   </definition>
+    <definition name="documento-add" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/documentacion/documento-add.jsp" />  
+   </definition>
+  <definition name="documento-edit" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/documentacion/documento-edit.jsp" />  
+   </definition>
+   
+   <!-- CRUD ARCHIVOS -->
+   <definition name="archivo-list" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/archivos/archivo-list.jsp" />  
+   </definition>
+  
+    <definition name="archivo-add" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/archivos/archivo-add.jsp" />  
+   </definition>
+  <definition name="archivo-edit" extends="base-definition">  
+       <put-attribute name="title" value="Usuarios" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/archivos/archivo-edit.jsp" />  
+   </definition>
+   
+   <!-- CRUD CLIENTES -->
+   <definition name="cliente-list" extends="base-definition">  
+       <put-attribute name="title" value="Clientes" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/clientes/cliente-list.jsp" />  
+   </definition>
+    <definition name="cliente-add" extends="base-definition">  
+       <put-attribute name="title" value="Clientes" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/clientes/cliente-add.jsp" />  
+   </definition>
+  <definition name="cliente-edit" extends="base-definition">  
+       <put-attribute name="title" value="Clientes" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/clientes/cliente-edit.jsp" />  
+   </definition>
+   
+    <!-- CRUD PROVEEDOR -->
+   <definition name="proveedor-list" extends="base-definition">  
+       <put-attribute name="title" value="Clientes" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/proveedores/proveedor-list.jsp" />  
+   </definition>
+    <definition name="proveedor-add" extends="base-definition">  
+       <put-attribute name="title" value="Clientes" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/proveedores/proveedor-add.jsp" />  
+   </definition>
+  <definition name="proveedor-edit" extends="base-definition">  
+       <put-attribute name="title" value="Clientes" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/proveedores/proveedor-edit.jsp" />  
+   </definition>
+   
+   <!-- CRUD PRODUCTOS -->
+   <definition name="producto-list" extends="base-definition">  
+       <put-attribute name="title" value="Productos" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/productos/producto-list.jsp" />  
+   </definition>
+   <definition name="proveedor-producto-list" extends="base-definition">  
+       <put-attribute name="title" value="Productos" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/productos/proveedor-producto-list.jsp" />  
+   </definition>
+    <definition name="producto-add" extends="base-definition">   
+       <put-attribute name="title" value="Productos" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/productos/producto-add.jsp" />  
+   </definition>
+  <definition name="producto-edit" extends="base-definition">  
+       <put-attribute name="title" value="Productos" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/productos/producto-edit.jsp" />  
+   </definition>
+   
+    <!-- CRUD PEDIDOS -->
+   <definition name="pedido-list" extends="base-definition">  
+       <put-attribute name="title" value="Pedidos" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/pedidos/pedido-list.jsp" />  
+   </definition>
+    <definition name="pedido-add" extends="base-definition">  
+       <put-attribute name="title" value="Pedidos" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/pedidos/pedido-add.jsp" />  
+   </definition>
+  <definition name="pedido-edit" extends="base-definition">  
+       <put-attribute name="title" value="Pedidos" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/pedidos/pedido-edit.jsp" />  
+   </definition>
+   
+   
+    <!-- CRUD COMPONENTES -->
+   <definition name="componente-list" extends="base-definition">  
+       <put-attribute name="title" value="Componentes" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/componentes/componente-list.jsp" />  
+   </definition>
+    <definition name="componente-add" extends="base-definition">  
+       <put-attribute name="title" value="Componentes" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/componentes/componente-add.jsp" />  
+   </definition>
+  <definition name="componente-edit" extends="base-definition">  
+       <put-attribute name="title" value="Componentes" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/componentes/componente-edit.jsp" />  
+   </definition>
+  
+  
+  
+    <!-- CRUD ARTICULOS -->
+   <definition name="articulo-list" extends="base-definition">  
+       <put-attribute name="title" value="Articulos" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/articulos/articulo-list.jsp" />  
+   </definition>
+    <definition name="articulo-add" extends="base-definition">  
+       <put-attribute name="title" value="Articulos" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/articulos/articulo-add.jsp" />  
+   </definition>
+  <definition name="articulo-edit" extends="base-definition">  
+       <put-attribute name="title" value="Articulos" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/articulos/articulo-edit.jsp" />  
+   </definition>
+   
+   
+   <!-- CRUD CLIENT -->
+   <definition name="client-list" extends="base-definition">  
+       <put-attribute name="title" value="Clientes" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/clients/client-list.jsp" />  
+   </definition>
+    <definition name="client-add" extends="base-definition">  
+       <put-attribute name="title" value="Clientes" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/clients/client-add.jsp" />  
+   </definition>
+  <definition name="client-edit" extends="base-definition">  
+       <put-attribute name="title" value="Clientes" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/clients/client-edit.jsp" />  
+   </definition>
+   
+   <!-- CRUD ALBARAN -->
+   <definition name="albaran-list" extends="base-definition">  
+       <put-attribute name="title" value="Albaranes" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/albaranes/albaran-list.jsp" />  
+   </definition>
+    <definition name="albaran-add" extends="base-definition">  
+       <put-attribute name="title" value="Albaranes" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/albaranes/albaran-add.jsp" />  
+   </definition>
+  <definition name="albaran-edit" extends="base-definition">  
+       <put-attribute name="title" value="Albaranes" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/albaranes/albaran-edit.jsp" />  
+   </definition>
+   <definition name="list-albaranes-cliente" extends="base-definition">  
+       <put-attribute name="title" value="Albaranes" />  
+       <put-attribute name="body" value="/WEB-INF/views/core/albaranes/list-albaranes-cliente.jsp" />  
+   </definition>
+   
+   
+   
+</tiles-definitions>

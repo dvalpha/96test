@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>arquetipo/core</display-name>
+	<context-param>
+		<param-name>contextClass</param-name>
+		<param-value>
+			org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+		</param-value>
+	</context-param>
+	<filter>
+		<description>
+		UTF-8</description>
+		<display-name>CharacterEncodingFilter</display-name>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>com.dvalpha.core.filter.CharacterEncodingFilter</filter-class>
+	</filter>	
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>*</url-pattern>
+	</filter-mapping>
+	<filter>
+	<filter-name>errorHandlerFilter</filter-name>
+	<filter-class>com.dvalpha.core.filter.ErrorHandleFilter</filter-class>
+</filter>
+<filter-mapping>
+	<filter-name>errorHandlerFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+</filter-mapping>
+	<filter>
+		<description>
+		</description>
+		<display-name>UrlRestrictionFilter</display-name>
+		<filter-name>UrlRestrictionFilter</filter-name>
+		<filter-class>com.dvalpha.core.filter.UrlRestrictionFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>UrlRestrictionFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
+	
+	
+	
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	
+  <listener>
+    <listener-class>com.dvalpha.core.utils.Tarea</listener-class>
+  </listener>
+
+
+	<servlet>
+		<servlet-name>SpringDispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextClass</param-name>
+			<param-value>
+				org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>com.dvalpha.core.config</param-value>
+		</init-param>
+		
+		
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SpringDispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+	
+	
+	
+</web-app>
