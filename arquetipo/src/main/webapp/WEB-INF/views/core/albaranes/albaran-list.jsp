@@ -32,15 +32,9 @@
 							
 							
 							<td>
-							<div class="dropdown">
-							  <button class="btn btn-primary dropdown-toggle btn-xs" type="button" data-toggle="dropdown"> <span class="glyphicon glyphicon-edit"></span>Opciones
-							  <span class="caret"></span></button>
-							  <ul class="dropdown-menu" >
-							    <li style="font-size:12px;"><a onclick="editar('<c:out value="${bean.codclient}"></c:out>')" href="#">Nuevo albaran <c:out value="${bean.codclient}"></c:out></a></li> 
-							    <li style="font-size:12px;"><a onclick="editar('<c:out value="${bean.codclient}"></c:out>')" href="#">Gestionar albaranes del cliente</a></li>
-							    <li style="font-size:12px;"><a onclick="editar('<c:out value="${bean.codclient}"></c:out>')" href="#">Gestionar facturas del cliente</a></li>
-							   							  </ul>
-							</div>
+							 <a onclick="editar('<c:out value="${bean.codclient}"></c:out>')" href="#"><button class="btn btn-primary btn-xs">Gestionar albaranes del cliente</button></a>
+							
+							
 							    
 							    <form action="list-albaranes-cliente" id="frm-<c:out value="${bean.codclient}"></c:out>" method="post">
 							    <input type="hidden" name="id" value="<c:out value="${bean.codclient}"></c:out>">
