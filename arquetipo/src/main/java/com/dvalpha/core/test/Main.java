@@ -1,8 +1,12 @@
 package com.dvalpha.core.test;
 
 import java.io.File;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+
+import org.apache.commons.beanutils.ConvertUtils;
+import org.apache.commons.beanutils.converters.DateConverter;
 
 import com.dvalpha.core.utils.PasswordGenerator;
 
@@ -10,8 +14,9 @@ public class Main {
 
 	public static void main(String[] args) {
 	
-		String a=PasswordGenerator.getPassword(12);
-		System.out.println(a);
+		DateConverter converter = new DateConverter();
+		converter.setPattern("yyyy-MM-dd");
+		ConvertUtils.register(converter, Date.class);
 		
 		
 		//-422016635

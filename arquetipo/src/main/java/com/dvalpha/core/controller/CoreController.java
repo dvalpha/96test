@@ -3,6 +3,7 @@ package com.dvalpha.core.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -12,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.beanutils.ConvertUtils;
+import org.apache.commons.beanutils.converters.DateConverter;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -144,6 +147,30 @@ public class CoreController {
 		return obj;
 	}
 	
+	/**
+	 * Metodo que recoge los parametros de la request y los settea a un bean
+	 * @param request
+	 * @param obj
+	 * @return
+	 */
+	public Object populateBeanConFecha(HttpServletRequest request,Object obj,String campo,String valor,String patronFecha){
+		
+		Map<String, String> parameters = request.getParameterMap();
+		try {
+			DateConverter converter = new DateConverter();
+			converter.setPattern(patronFecha);
+			ConvertUtils.register(converter, Date.class);
+			BeanUtils.setProperty(obj, campo, valor);
+			BeanUtils.populate(obj, parameters);
+		} catch (IllegalAccessException e) {
+			logger.error(e.getCause());
+		} catch (InvocationTargetException e) {
+			logger.error(e.getCause());
+		} catch(org.apache.commons.beanutils.ConversionException e) {
+			logger.error(e.getCause());
+		}
+		return obj;
+	}
 	
 	
 	

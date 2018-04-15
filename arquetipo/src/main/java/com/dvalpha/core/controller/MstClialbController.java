@@ -94,9 +94,15 @@ public class MstClialbController extends CoreController {
 	@RequestMapping(value = { "/list-albaranes-cliente" })
 	public ModelAndView listMstClialbCliente(HttpServletResponse response, HttpServletRequest request) throws IOException {
 
-	Long id=Long.parseLong(request.getParameter("id"));
-	MstClialb albaranCliente = (MstClialb)dao.readById(id, MstClialb.class);
-	List<MstClialb> lista = (List<MstClialb>)dao.findAllWhere(new MstClialb(),"codclient",albaranCliente.getCodclient());
+	String codigocliente=request.getParameter("codigocliente");
+
+	String sql1="select * from mst_clialb where codclient='"+codigocliente+"';";
+	
+	MstClialb albaranCliente = (MstClialb)dao.find_By_SQL_Generic(sql1, MstClialb.class).get(0);
+	
+	String sql ="select * from mst_clialb where codclient='"+albaranCliente.getCodclient()+"' order by fechaalb desc";
+	
+	List<MstClialb> lista = (List<MstClialb>)dao.find_By_SQL_Generic(sql, MstClialb.class);
 	request.setAttribute("list", lista);
 	return new ModelAndView("list-albaranes-cliente");
 
@@ -114,10 +120,15 @@ public class MstClialbController extends CoreController {
 
 @RequestMapping(value = { "/update-clialb" })
 	public void updateMstClialb(HttpServletResponse response, HttpServletRequest request) throws IOException {
-
-	MstClialb bean=(MstClialb)populateBean(request, new MstClialb());
+    
+	MstClialb bean=(MstClialb)populateBeanConFecha(request, new MstClialb(), "fechaalb",request.getParameter("fechaalb"),"yyyy-MM-dd");
+	
+	System.out.println("albaran  "+bean);
+	
+	
 	dao.updateEntity(bean);
-responseAjax(response, "Actualizado");
+
+	responseAjax(response, "Actualizado");
 }
 	
 

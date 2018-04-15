@@ -5,10 +5,8 @@
 
 			<div class="col-lg-7">
 <h2>Gestión de albaranes de cliente</h2>
-<h1>Esta lista no debe ser la de la entidad MstClialb si no la lista de la tabla clialblin [rectificar la entidad]</h1>
+
 <br>
-		<p>Traspaso de la info entidad factura y entidad clialbin ya qu een los menus de list factura y albaran vas a tener que mostrar esa lista o al menos gestionarlo a partir de esa entidad</p>
-	<p>Es decir, necesitamos hacer referencia a esa entidad (clialblin) siempre, por ejemplo al traer un conjunto de albaranes a una factura o un conjunto de lineas a un albaran</p>
 	
 	</div>		
 			
@@ -18,23 +16,23 @@
            
             <table id="table-MstClialb" class="table table-condensed table-hover" cellspacing="0" width="100%">
 					<thead>
-						<tr>
-							<th>numalb</th>
-							<th>-</th>
-							<th>-</th>
-							<th>-</th>
-							<th>Creación</th>
+						<tr><th>Cliente</th>
+							<th>Número de albaran</th>
+							<th>Codigo de cliente</th>
+							<th>Fecha</th>
+							
 							<th>Controles</th>
 						</tr>
 					</thead>
 					<tbody>
 					<c:forEach var="bean" items="${requestScope.list}">
 						<tr id="tr-<c:out value="${bean.id}"></c:out>">
-							<td><c:out value="${bean.id}"></c:out></td>
-							<td><c:out value="${bean.id}"></c:out></td>
-							<td><c:out value="${bean.id}"></c:out></td>
-							<td><c:out value="${bean.id}"></c:out></td>
-							<td><fmt:formatDate type = "date" value="${bean.creacion}" /></td>
+							<td><c:out value="${bean.nomcli}"></c:out></td>
+							<td><c:out value="${bean.numalb}"></c:out></td>
+							<td><c:out value="${bean.codclient}"></c:out></td>
+							<td><fmt:formatDate type = "date" 
+        					 value = "${bean.fechaalb}" /></td>
+							
 							<td>
 							    <button class="btn btn-success btn-xs" onclick="editar(<c:out value="${bean.id}"></c:out>)">
 							    <span class="glyphicon glyphicon-edit"></span>

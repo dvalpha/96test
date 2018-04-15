@@ -2,74 +2,98 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 		<div class="col-sm-10">
 			<div class="col-lg-12">
-
-				<h2>Edición de albaranes</h2>
+			<div class="col-xs-4">
+				<h1>Editar albaran</h1>
+			</div>
+			<div class="col-xs-8">
+			<img id="foto-form" class="img img-responsive col-xs-2 pull-right" src="<c:out value="${sessionScope.statics}" escapeXml="false"></c:out>/images/iconos/documentos.gif" class="thumbnail" >
+			
+			</div>	
 			</div>
 
 
 <form id="frm-update-clialb">
-<input type="hidden" name="id" id="id" value="<c:out value="${requestScope.object.id}"></c:out>">	<div class="form-group">
-<label for="seralb">SERALB</label>
+<div class="col-xs-3">
+<input type="hidden" name="id" id="id" value="<c:out value="${requestScope.object.id}"></c:out>">	
+<div class="form-group" >
+<label for="seralb">SERIE ALBARAN</label>
 <br>
-<input type="text" value="<c:out value="${requestScope.object.seralb}"></c:out>" name="seralb" class="form-control" id="seralb">
+<input type="text" value="<c:out value="${requestScope.object.seralb}"></c:out>" name="seralb" class="form-control" id="seralb" >
+</div>
+<div class="form-group">
+<label for="serfra">SERIE FACTURA</label>
+<br>
+<input type="text" value="<c:out value="${requestScope.object.serfra}"></c:out>" name="serfra" class="form-control" id="serfra">
+</div>
+<div class="form-group">
+<label for="numfra">NUM.FACTURA</label>
+<br>
+<input type="text" value="<c:out value="${requestScope.object.numfra}"></c:out>" name="numfra" class="form-control" id="numfra" disabled>
 </div>
 	<div class="form-group">
-<label for="numalb">NUMALB</label>
+<label for="numalb">NUM.ALBARAN</label>
 <br>
-<input type="text" value="<c:out value="${requestScope.object.numalb}"></c:out>" name="numalb" class="form-control" id="numalb">
+<input type="text" value="<c:out value="${requestScope.object.numalb}"></c:out>" name="numalb" class="form-control" id="numalb" disabled>
 </div>
 	<div class="form-group">
-<label for="fechaalb">FECHAALB</label>
+<label for="fechaalb">FECHA ALBARAN</label>
 <br>
-<input type="text" value="<c:out value="${requestScope.object.fechaalb}"></c:out>" name="fechaalb" class="form-control" id="fechaalb">
+<input type="text" value="<fmt:formatDate pattern = "yyyy-MM-dd" 
+         value = "${requestScope.object.fechaalb}" />" name="fechaalb" class="form-control" id="fechaalb" disabled>
+</div>
+	
+	
+<input type="hidden" value="<c:out value="${requestScope.object.codclient}"></c:out>" name="codclient" class="form-control" id="codclient">
+
+
+</div>
+<div class="col-xs-3">
+	<div class="form-group">
+<label for="nomcli">NOMBRE CLIENTE</label>
+<br>
+<input type="text" value="<c:out value="${requestScope.object.nomcli}"></c:out>" name="nomcli" class="form-control" id="nomcli" disabled>
 </div>
 	<div class="form-group">
-<label for="codclient">CODCLIENT</label>
+<label for="dircli">DIR.CLIENTE</label>
 <br>
-<input type="text" value="<c:out value="${requestScope.object.codclient}"></c:out>" name="codclient" class="form-control" id="codclient">
+<input type="text" value="<c:out value="${requestScope.object.dircli}"></c:out>" name="dircli" class="form-control" id="dircli" disabled>
 </div>
 	<div class="form-group">
-<label for="nomcli">NOMCLI</label>
+<label for="pobcli">POB.CLIENTE</label>
 <br>
-<input type="text" value="<c:out value="${requestScope.object.nomcli}"></c:out>" name="nomcli" class="form-control" id="nomcli">
+<input type="text" value="<c:out value="${requestScope.object.pobcli}"></c:out>" name="pobcli" class="form-control" id="pobcli" disabled>
 </div>
 	<div class="form-group">
-<label for="dircli">DIRCLI</label>
+<label for="codpos">CP</label>
 <br>
-<input type="text" value="<c:out value="${requestScope.object.dircli}"></c:out>" name="dircli" class="form-control" id="dircli">
+<input type="text" value="<c:out value="${requestScope.object.codpos}"></c:out>" name="codpos" class="form-control" id="codpos" disabled>
 </div>
 	<div class="form-group">
-<label for="pobcli">POBCLI</label>
-<br>
-<input type="text" value="<c:out value="${requestScope.object.pobcli}"></c:out>" name="pobcli" class="form-control" id="pobcli">
-</div>
-	<div class="form-group">
-<label for="codpos">CODPOS</label>
-<br>
-<input type="text" value="<c:out value="${requestScope.object.codpos}"></c:out>" name="codpos" class="form-control" id="codpos">
-</div>
-	<div class="form-group">
-<label for="coddir">CODDIR</label>
+<label for="coddir">COD.DIRECCION</label>
 <br>
 <input type="text" value="<c:out value="${requestScope.object.coddir}"></c:out>" name="coddir" class="form-control" id="coddir">
 </div>
+
+
+</div>
+<div class="col-xs-3">
 	<div class="form-group">
-<label for="nomclidir">NOMCLIDIR</label>
+<label for="nomclidir">ENVIO NOM. CLIENTE</label>
 <br>
 <input type="text" value="<c:out value="${requestScope.object.nomclidir}"></c:out>" name="nomclidir" class="form-control" id="nomclidir">
 </div>
 	<div class="form-group">
-<label for="dirclidir">DIRCLIDIR</label>
+<label for="dirclidir">ENVIO DIR. CLIENTE</label>
 <br>
 <input type="text" value="<c:out value="${requestScope.object.dirclidir}"></c:out>" name="dirclidir" class="form-control" id="dirclidir">
 </div>
 	<div class="form-group">
-<label for="pobclidir">POBCLIDIR</label>
+<label for="pobclidir">ENVIO POB.CLIENTE</label>
 <br>
 <input type="text" value="<c:out value="${requestScope.object.pobclidir}"></c:out>" name="pobclidir" class="form-control" id="pobclidir">
 </div>
 	<div class="form-group">
-<label for="codposdir">CODPOSDIR</label>
+<label for="codposdir">ENVIO CP CLIENTE</label>
 <br>
 <input type="text" value="<c:out value="${requestScope.object.codposdir}"></c:out>" name="codposdir" class="form-control" id="codposdir">
 </div>
@@ -78,6 +102,9 @@
 <br>
 <input type="text" value="<c:out value="${requestScope.object.clicmda}"></c:out>" name="clicmda" class="form-control" id="clicmda">
 </div>
+
+</div>
+<div class="col-xs-3">
 	<div class="form-group">
 <label for="contalinies">CONTALINIES</label>
 <br>
@@ -98,19 +125,13 @@
 <br>
 <input type="text" value="<c:out value="${requestScope.object.semana3}"></c:out>" name="semana3" class="form-control" id="semana3">
 </div>
-	<div class="form-group">
-<label for="serfra">SERFRA</label>
-<br>
-<input type="text" value="<c:out value="${requestScope.object.serfra}"></c:out>" name="serfra" class="form-control" id="serfra">
+	
+	
 </div>
-	<div class="form-group">
-<label for="numfra">NUMFRA</label>
-<br>
-<input type="text" value="<c:out value="${requestScope.object.numfra}"></c:out>" name="numfra" class="form-control" id="numfra">
-</div>
-
-<button class="btn btn-primry">Actualizar</button>
-			</form>
+<div class="col-xs-3">
+<button class="btn btn-warning col-lg-12">Actualizar</button>
+</div>			
+</form>
 <div class="col-lg-12"><b>Status</b>
 <div class="alert alert-info" id="msg"></div>
 </div>
